@@ -1,0 +1,432 @@
+[gd_scene format=3 uid="uid://c4hrr4qwaydy8"]
+
+[ext_resource type="Script" uid="uid://iyw6d6n7ivkw" path="res://levels/player.gd" id="1_sjb42"]
+[ext_resource type="Texture2D" uid="uid://dlx23rrmfa07v" path="res://concrete-texture.png" id="1_ua5ty"]
+[ext_resource type="Texture2D" uid="uid://b46vl5q0irrir" path="res://lava_psx_64.png" id="2_8hd6v"]
+[ext_resource type="Script" uid="uid://bmhxlytclsxqc" path="res://levels/damage.gd" id="3_045es"]
+[ext_resource type="Texture2D" uid="uid://dpgrdjbifi5eu" path="res://crosshair_psx_31px.png" id="5_61w3m"]
+[ext_resource type="AudioStream" uid="uid://cem67ct2rodbu" path="res://levels/eaglaxle-generic-footstep-2-530779.mp3" id="5_a5s8o"]
+[ext_resource type="AudioStream" uid="uid://k1ltqh4kmvf0" path="res://levels/sprint-woosh.mp3" id="5_l7nqg"]
+[ext_resource type="AudioStream" uid="uid://ybgdhb57xhhf" path="res://levels/jump-grunt.mp3" id="5_mxqdg"]
+[ext_resource type="AudioStream" uid="uid://d23k6741vkuxr" path="res://levels/dragon-studio-simple-whoosh-382724.mp3" id="5_poyfc"]
+[ext_resource type="AudioStream" uid="uid://b6p5uev5nciui" path="res://levels/eaglaxle-generic-footstep-3-530777.mp3" id="6_ls4ot"]
+[ext_resource type="Script" uid="uid://dxm3q7j1r6fri" path="res://levels/health.gd" id="6_pdpul"]
+[ext_resource type="AudioStream" uid="uid://b8vfvc2nh1p0l" path="res://levels/51124243-footstep-372877.mp3" id="7_ls4ot"]
+[ext_resource type="AudioStream" uid="uid://bpu4bq8lxxgjl" path="res://u_68csiaifb5-bulletimpact1-442717.mp3" id="9_8bcou"]
+[ext_resource type="AudioStream" uid="uid://bsfknsx5cv37s" path="res://02._damage_grunt_male.wav" id="9_omn1t"]
+[ext_resource type="AudioStream" uid="uid://c2auneqsg1p0q" path="res://universfield-male-death-scream-123078.mp3" id="10_lf3p4"]
+[ext_resource type="AudioStream" uid="uid://b404y1pmj6x76" path="res://levels/u_68csiaifb5-bulletimpact2-442718.mp3" id="11_jq2cn"]
+[ext_resource type="AudioStream" uid="uid://bwlvgd6suuy2b" path="res://alert_shield.wav" id="12_jq2cn"]
+[ext_resource type="PackedScene" uid="uid://cd7f86s0xoa6w" path="res://unarmed.tscn" id="14_poyfc"]
+[ext_resource type="PackedScene" uid="uid://beuynpbnheymi" path="res://g19-fps.glb" id="15_r8rrl"]
+[ext_resource type="Script" uid="uid://te73tcmfvoqe" path="res://levels/ammohud.gd" id="17_4mjh6"]
+[ext_resource type="Script" uid="uid://dwtdiglg8i2x7" path="res://levels/viewmodel_fix.gd" id="17_7fu2r"]
+[ext_resource type="AudioStream" uid="uid://ny1dx1h1fgrb" path="res://levels/rechargehealth.mp3" id="17_ls4ot"]
+[ext_resource type="Script" uid="uid://bm8r0dg4uk6te" path="res://levels/healflash.gd" id="17_xtf7k"]
+[ext_resource type="PackedScene" uid="uid://5guf4o8utkxu" path="res://levels/healthbox.glb" id="18_tx362"]
+[ext_resource type="Script" uid="uid://dg0onelhg4kfv" path="res://levels/weaponmanager.gd" id="20_3bikl"]
+[ext_resource type="Script" uid="uid://dre7hkt73wl20" path="res://levels/ammoflash.gd" id="21_3612o"]
+[ext_resource type="Script" uid="uid://dmhh74pnt0040" path="res://levels/crosshair.gd" id="21_r8rrl"]
+[ext_resource type="Script" uid="uid://csqw5d41lltle" path="res://levels/dashchargehud.gd" id="24_poyfc"]
+[ext_resource type="Script" uid="uid://bbfhg5ukew7md" path="res://levels/healthbox.gd" id="25_wieee"]
+[ext_resource type="AudioStream" uid="uid://boj1gi1t0b783" path="res://levels/health-pickup.mp3" id="26_xtf7k"]
+[ext_resource type="Script" uid="uid://c6ga8o836m3ty" path="res://levels/pausemenu.gd" id="28_7yq2r"]
+[ext_resource type="Script" uid="uid://c5s3h8xn5i7oe" path="res://levels/ammobox.gd" id="31_yn1es"]
+[ext_resource type="PackedScene" uid="uid://0tk3y6tfq1du" path="res://levels/ammobox.glb" id="32_3612o"]
+[ext_resource type="AudioStream" uid="uid://5wdv5u5nsnqp" path="res://levels/ammo-pickup.mp3" id="33_cnn1a"]
+[ext_resource type="PackedScene" uid="uid://cpy12xcwudvfr" path="res://weaponpad.glb" id="36_c124c"]
+[ext_resource type="PackedScene" uid="uid://bo4hyesi7nv3o" path="res://levels/g19pickup.tscn" id="37_c124c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3oru"]
+albedo_texture = ExtResource("1_ua5ty")
+uv1_scale = Vector3(6.455, 8.375, 0.85)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ikly8"]
+uv2_padding = 2.29
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fwndm"]
+size = Vector3(1.9791737, 1, 1.9801636)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ua5ty"]
+albedo_texture = ExtResource("1_ua5ty")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdtm5"]
+size = Vector3(1.0102539, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_045es"]
+albedo_texture = ExtResource("2_8hd6v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8rrl"]
+albedo_texture = ExtResource("2_8hd6v")
+uv1_scale = Vector3(3.685, 3.765, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1o3wi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jc0ri"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wdyqx"]
+radius = 3.266
+height = 13.782625
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yydhl"]
+sky_top_color = Color(0.50960743, 0.43270433, 0.3671452, 1)
+sky_horizon_color = Color(0.5473955, 0.22916901, 0.21680993, 1)
+ground_bottom_color = Color(0.36483437, 0.2747175, 0.21064767, 1)
+ground_horizon_color = Color(0.465527, 0.23223609, 0.3500103, 1)
+
+[sub_resource type="Sky" id="Sky_pdpul"]
+sky_material = SubResource("ProceduralSkyMaterial_yydhl")
+
+[sub_resource type="Environment" id="Environment_sjb42"]
+background_mode = 2
+background_color = Color(0.3574119, 0.4305719, 0.4912607, 1)
+background_energy_multiplier = 1.35
+sky = SubResource("Sky_pdpul")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqvm7"]
+
+[node name="Node3D" type="Node3D" unique_id=1205951098]
+
+[node name="floor" type="MeshInstance3D" parent="." unique_id=606923035]
+transform = Transform3D(812.99664, 0, 0, 0, 1.9162382, 0, 0, 0, 629.50854, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_b3oru")
+mesh = SubResource("PlaneMesh_ikly8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor" unique_id=2034794976]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D" unique_id=504603203]
+transform = Transform3D(1, 0, 0, 0, 0.9999993, 0, 0, 0, 0.99996686, 0.004523277, 0, 0.004428682)
+shape = SubResource("BoxShape3D_fwndm")
+
+[node name="cube" type="MeshInstance3D" parent="." unique_id=112680965]
+transform = Transform3D(47.763443, 0, 0, 0, 43.320026, 0, 0, 0, 46.467945, -84.421295, -12.607189, -84.173996)
+material_override = SubResource("StandardMaterial3D_ua5ty")
+mesh = SubResource("BoxMesh_pdtm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube" unique_id=878852687]
+transform = Transform3D(0.5136716, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/StaticBody3D" unique_id=1588225169]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.51551116, 0.024616122, 0, 0.0044286833)
+shape = SubResource("BoxShape3D_fwndm")
+
+[node name="cube2" type="MeshInstance3D" parent="." unique_id=865385128]
+transform = Transform3D(47.763443, 0, 0, 0, 43.320026, 0, 0, 0, 46.467945, -89.704285, 6.0829067, 57.14469)
+material_override = SubResource("StandardMaterial3D_ua5ty")
+mesh = SubResource("BoxMesh_pdtm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube2" unique_id=136405672]
+transform = Transform3D(0.5136716, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2/StaticBody3D" unique_id=791111826]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.51551116, 0.024616122, 0, 0.0044286833)
+shape = SubResource("BoxShape3D_fwndm")
+
+[node name="cube4" type="MeshInstance3D" parent="." unique_id=809485462]
+transform = Transform3D(47.763443, 0, 0, 0, 81.62358, 0, 0, 0, 46.467945, -84.421295, 3.8425007, 188.72131)
+material_override = SubResource("StandardMaterial3D_ua5ty")
+mesh = SubResource("BoxMesh_pdtm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube4" unique_id=897755309]
+transform = Transform3D(0.5136716, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube4/StaticBody3D" unique_id=1551483421]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.51551116, 0.024616122, 0, 0.0044286833)
+shape = SubResource("BoxShape3D_fwndm")
+
+[node name="cube5" type="MeshInstance3D" parent="." unique_id=182733458]
+transform = Transform3D(47.763443, 0, 0, 0, 111.342125, 0, 0, 0, 46.467945, 49.41278, 21.59379, 188.72131)
+material_override = SubResource("StandardMaterial3D_ua5ty")
+mesh = SubResource("BoxMesh_pdtm5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube5" unique_id=911480224]
+transform = Transform3D(0.5136716, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube5/StaticBody3D" unique_id=756998657]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.51551116, 0.024616122, 0, 0.0044286833)
+shape = SubResource("BoxShape3D_fwndm")
+
+[node name="damagebox" type="MeshInstance3D" parent="." unique_id=2038442658]
+transform = Transform3D(25.98661, 0, 0, 0, 25.296272, 0, 0, 0, 27.197464, 101.85249, 22.54757, -84.59166)
+material_override = SubResource("StandardMaterial3D_045es")
+mesh = SubResource("BoxMesh_pdtm5")
+
+[node name="Area3D" type="Area3D" parent="damagebox" unique_id=1535706219]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999998, 0, 0, 0)
+script = ExtResource("3_045es")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="damagebox/Area3D" unique_id=1562019759]
+transform = Transform3D(1, 0, 0, 0, 0.971, 0, 0, 0, 0.994, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_r8rrl")
+mesh = SubResource("BoxMesh_1o3wi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="damagebox/Area3D" unique_id=288467316]
+transform = Transform3D(1.025, 0, 0, 0, 1.025, 0, 0, 0, 1.025, 0, 0, 0)
+shape = SubResource("BoxShape3D_jc0ri")
+debug_color = Color(0.7119457, 0.43120894, 1.92523e-07, 0.41960785)
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=1552746003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.870182, 0)
+script = ExtResource("1_sjb42")
+dash_speed = 200.0
+dash_sound = ExtResource("5_poyfc")
+dash_volume_db = -20.0
+jump_sound = ExtResource("5_mxqdg")
+double_jump_velocity = 65.0
+double_jump_sound = ExtResource("5_poyfc")
+double_jump_volume_db = -15.800999999999998
+sprint_sound = ExtResource("5_l7nqg")
+footstep_sounds = Array[AudioStream]([ExtResource("5_a5s8o"), ExtResource("5_a5s8o"), ExtResource("6_ls4ot"), null])
+landing_sounds = Array[AudioStream]([ExtResource("7_ls4ot")])
+landing_volume_db = -11.010000000000002
+landing_pitch_variation = -0.07
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=1289784954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.726773, 5.532366, 0)
+shape = SubResource("CapsuleShape3D_wdyqx")
+debug_color = Color(0, 0.59728605, 0.7172711, 0.41960785)
+
+[node name="Head" type="Node3D" parent="player" unique_id=1362335251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=43410006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.512576, 8.137137, -2.5206285)
+cull_mask = 1047553
+
+[node name="RayCast3D" type="RayCast3D" parent="player/Head/Camera3D" unique_id=659945299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+target_position = Vector3(0, 0, -100)
+
+[node name="viewmodel-fix" type="Node" parent="player/Head/Camera3D" unique_id=504090467]
+script = ExtResource("17_7fu2r")
+
+[node name="WeaponManager" type="Node3D" parent="player/Head/Camera3D" unique_id=1888037456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+script = ExtResource("20_3bikl")
+unarmed_scene = ExtResource("14_poyfc")
+g19_fps_scene = ExtResource("15_r8rrl")
+
+[node name="HUD" type="CanvasLayer" parent="player" unique_id=727381211]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player/HUD" unique_id=1029672232]
+custom_minimum_size = Vector2(260, 64)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -276.0
+offset_right = 2567.0
+offset_bottom = 2724.0
+grow_vertical = 0
+scale = Vector2(1.6, 0.1)
+script = ExtResource("17_4mjh6")
+icon_width = 60.0
+spacing = 4
+padding = 4
+background_color = Color(0.5992153, 0, 0, 1)
+border_color = Color(1, 0.44368404, 0.37509546, 1)
+ammo_text_color = Color(1, 0.15294118, 0.10980392, 1)
+background_opacity = 0.0
+border_width = 0
+
+[node name="WeaponIcon" type="TextureRect" parent="player/HUD/HBoxContainer" unique_id=27755303]
+layout_mode = 2
+expand_mode = 5
+
+[node name="AmmoLabel" type="Label" parent="player/HUD/HBoxContainer" unique_id=1936596802]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7875421, 4.1633098e-06, 5.7756904e-07, 1)
+theme_override_colors/font_outline_color = Color(1, 0.51025575, 0.44386888, 1)
+text = "12/60"
+
+[node name="HP" type="Label" parent="player/HUD" unique_id=1963276088]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HealthBar" type="ProgressBar" parent="player/HUD" unique_id=1652750201]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(275, 5)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = 56.0
+offset_right = 137.0
+offset_bottom = 83.0
+grow_horizontal = 2
+scale = Vector2(1, 0.5238013)
+size_flags_stretch_ratio = 0.0
+
+[node name="HealFlash" type="ColorRect" parent="player/HUD" unique_id=1806619019]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("17_xtf7k")
+
+[node name="AmmoFlash" type="ColorRect" parent="player/HUD" unique_id=642806016]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_3612o")
+
+[node name="DashHud" type="Control" parent="player/HUD" unique_id=1998603271]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 80.00001
+offset_top = 44.0
+offset_right = 120.00001
+offset_bottom = 84.0
+scale = Vector2(1.1997335, 1.0000004)
+script = ExtResource("24_poyfc")
+player_path = NodePath("../..")
+bar_width = 50.0
+bar_height = 3.0
+segment_gap = 4.0
+filled_color = Color(1, 0, 0, 1)
+empty_color = Color(0.41040736, 0, 0.04177686, 1)
+border_color = Color(0.6627451, 0.29411766, 0.34117648, 0)
+
+[node name="CrossHair" type="Control" parent="player/HUD" unique_id=780083507]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_r8rrl")
+crosshair_texture = ExtResource("5_61w3m")
+crosshair_color = Color(1, 0, 0, 1)
+
+[node name="Health" type="Node" parent="player" unique_id=1167460637 node_paths=PackedStringArray("bar")]
+script = ExtResource("6_pdpul")
+bar = NodePath("../HUD/HealthBar")
+regen_delay = 8.0
+regen_rate = 35.0
+hurt_sounds = Array[AudioStream]([ExtResource("11_jq2cn"), ExtResource("9_8bcou"), ExtResource("9_omn1t")])
+low_health_sound = ExtResource("12_jq2cn")
+death_sound = ExtResource("10_lf3p4")
+recharge_sound = ExtResource("17_ls4ot")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=948506418]
+environment = SubResource("Environment_sjb42")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1660768323]
+transform = Transform3D(0.9669366, -7.204239e-09, 0.25501695, -0.20326084, -0.6039155, 0.7706952, 0.15400869, -0.79704833, -0.583948, 0, 62.179054, 0)
+light_color = Color(1, 0.6946383, 0.59160674, 1)
+light_energy = 6.34
+light_indirect_energy = 1.525
+light_volumetric_fog_energy = 1.14
+light_angular_distance = 2.5
+sky_mode = 2
+
+[node name="health-box" type="Area3D" parent="." unique_id=1144228003]
+transform = Transform3D(1.7645316, 0, 0, 0, 1.5112572, 0, 0, 0, 1.445312, 0, -9.536743e-07, 7.6293945e-06)
+script = ExtResource("25_wieee")
+pickup_sound = ExtResource("26_xtf7k")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="health-box" unique_id=1911703736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.99771, -11.610648, -127.82217)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="health-box" unique_id=2021945334]
+transform = Transform3D(6.9453406, 0, 0, 0, 7.106575, 0, 0, 0, 8.746819, -80.075615, 3.228572, -127.87283)
+shape = SubResource("BoxShape3D_rqvm7")
+
+[node name="healthbox" parent="health-box" unique_id=1687652003 instance=ExtResource("18_tx362")]
+transform = Transform3D(6.7918286, 0, 0, 0, 8.428149, 0, 0, 0, 10.248926, -79.99771, -11.610647, -127.822174)
+
+[node name="health-box2" type="Area3D" parent="." unique_id=2002590338]
+transform = Transform3D(1.7645316, 0, 0, 0, 1.5112572, 0, 0, 0, 1.445312, 59.100975, -9.536743e-07, 7.6293945e-06)
+script = ExtResource("25_wieee")
+pickup_sound = ExtResource("26_xtf7k")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="health-box2" unique_id=928126164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.99771, -11.610648, -127.82217)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="health-box2" unique_id=180762717]
+transform = Transform3D(6.9453406, 0, 0, 0, 7.106575, 0, 0, 0, 8.746819, -80.075615, 3.228572, -127.87283)
+shape = SubResource("BoxShape3D_rqvm7")
+
+[node name="healthbox" parent="health-box2" unique_id=255107676 instance=ExtResource("18_tx362")]
+transform = Transform3D(6.7918286, 0, 0, 0, 8.428149, 0, 0, 0, 10.248926, -79.99771, -11.610647, -127.822174)
+
+[node name="ammo-box" type="Area3D" parent="." unique_id=673963944]
+transform = Transform3D(1.7645316, 0, 0, 0, 1.5112572, 0, 0, 0, 1.445312, -178.40753, -9.536743e-07, 7.6293945e-06)
+script = ExtResource("31_yn1es")
+pickup_sound = ExtResource("33_cnn1a")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ammo-box" unique_id=622396121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.99771, -11.610648, -127.82217)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ammo-box" unique_id=1066359034]
+transform = Transform3D(6.9453406, 0, 0, 0, 7.106575, 0, 0, 0, 8.746819, -80.075615, 3.228572, -127.87283)
+shape = SubResource("BoxShape3D_rqvm7")
+
+[node name="ammobox" parent="ammo-box" unique_id=1896356746 instance=ExtResource("18_tx362")]
+transform = Transform3D(6.7918286, 0, 0, 0, 8.428149, 0, 0, 0, 10.248926, -79.99771, -11.610647, -127.822174)
+
+[node name="Cube" parent="ammo-box/ammobox" index="0" unique_id=494080190]
+visible = false
+
+[node name="ammobox" parent="ammo-box/ammobox" unique_id=960401659 instance=ExtResource("32_3612o")]
+transform = Transform3D(2.347543, 0, 0, 0, 1.2916647, 0, 0, 0, 0.6657134, -0.014955521, -0.3763435, -0.0091667175)
+
+[node name="ammo-box2" type="Area3D" parent="." unique_id=654617477]
+transform = Transform3D(1.7645316, 0, 0, 0, 1.5112572, 0, 0, 0, 1.445312, -178.40753, -9.536743e-07, 69.9034)
+script = ExtResource("31_yn1es")
+pickup_sound = ExtResource("33_cnn1a")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ammo-box2" unique_id=744380586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.99771, -11.610648, -127.82217)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ammo-box2" unique_id=1014299890]
+transform = Transform3D(6.9453406, 0, 0, 0, 7.106575, 0, 0, 0, 8.746819, -80.075615, 3.228572, -127.87283)
+shape = SubResource("BoxShape3D_rqvm7")
+
+[node name="ammobox" parent="ammo-box2" unique_id=728847637 instance=ExtResource("18_tx362")]
+transform = Transform3D(6.7918286, 0, 0, 0, 8.428149, 0, 0, 0, 10.248926, -79.99771, -11.610647, -127.822174)
+
+[node name="Cube" parent="ammo-box2/ammobox" index="0" unique_id=494080190]
+visible = false
+
+[node name="ammobox" parent="ammo-box2/ammobox" unique_id=145681180 instance=ExtResource("32_3612o")]
+transform = Transform3D(2.347543, 0, 0, 0, 1.2916647, 0, 0, 0, 0.6657134, -0.014955521, -0.3763435, -0.0091667175)
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1962170825]
+script = ExtResource("28_7yq2r")
+
+[node name="Control" type="Control" parent="PauseMenu" unique_id=132678301]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/Control" unique_id=1933883489]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/Control" unique_id=1948912898]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Control/PanelContainer" unique_id=983604840]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PauseMenu/Control/PanelContainer/VBoxContainer" unique_id=128235220]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Control/PanelContainer/VBoxContainer" unique_id=2132904415]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Control/PanelContainer/VBoxContainer/ResumeButton" unique_id=1467529551]
+layout_mode = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 20.0
+
+[node name="weaponpad" parent="." unique_id=52213334 instance=ExtResource("36_c124c")]
+transform = Transform3D(1.8769934, 0, 0, 0, 1.8886585, 0, 0, 0, 1.5079716, 132.48088, -5.210844, 54.836063)
+
+[node name="g19-pickup" parent="." unique_id=846882083 instance=ExtResource("37_c124c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.49176, 0.95811653, 52.492348)
+
+[editable path="ammo-box/ammobox"]
+[editable path="ammo-box2/ammobox"]

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c3uuipacel1wm"]
+
+[ext_resource type="Script" uid="uid://c8e3auidsga7p" path="res://levels/gun.gd" id="1_bfki0"]
+[ext_resource type="Texture2D" uid="uid://cj32idm1rj3p2" path="res://levels/g19-icon.png" id="2_c76tk"]
+[ext_resource type="AudioStream" uid="uid://bmo7a45sdwu7j" path="res://levels/g19-shot.mp3" id="3_42v7f"]
+[ext_resource type="AudioStream" uid="uid://g2r5funeetoy" path="res://levels/g19-reload.mp3" id="4_hegpp"]
+[ext_resource type="AudioStream" uid="uid://deliacxbxvgoq" path="res://levels/g19-empty.mp3" id="5_dvuwx"]
+[ext_resource type="Texture2D" uid="uid://ddug8t27gpxn6" path="res://levels/muzzle_flash_3.png" id="6_du78e"]
+[ext_resource type="PackedScene" uid="uid://upt5egqir6ou" path="res://levels/g19-fps.glb" id="7_yf54o"]
+[ext_resource type="PackedScene" uid="uid://beuynpbnheymi" path="res://g19-fps.glb" id="8_qpj8t"]
+
+[node name="g19" type="Node3D" unique_id=864365409]
+script = ExtResource("1_bfki0")
+weapon_icon = ExtResource("2_c76tk")
+shoot_sounds = Array[AudioStream]([ExtResource("3_42v7f")])
+reload_sound = ExtResource("4_hegpp")
+empty_click_sound = ExtResource("5_dvuwx")
+flash_size = 0.15
+flash_texture = ExtResource("6_du78e")
+ads_position = Vector3(-1.36, -0.12, 1.08)
+ads_rotation_degrees = Vector3(0, -1.025, 0)
+recoil_kickback = 2.0
+recoil_pitch_degrees = 2.0
+walk_bob_frequency = 8.0
+walk_bob_vertical = 0.085
+walk_bob_horizontal = 0.085
+walk_bob_roll_degrees = 0.195
+walk_bob_ads_multiplier = 0.2
+animation_player_path = NodePath("g19-fps/AnimationPlayer")
+
+[node name="g19-fps" parent="." unique_id=356341866 instance=ExtResource("7_yf54o")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.005, -6.165, -6.213)
+
+[node name="Skeleton3D" parent="g19-fps/ArmRig" parent_id_path=PackedInt32Array(356341866, 1034036329) index="0" unique_id=1004142930]
+bones/0/position = Vector3(-0.005627945, 0.11706495, -0.13451079)
+bones/0/rotation = Quaternion(0.28570285, 0.6121978, 0.7362782, -0.038498346)
+bones/0/scale = Vector3(0.9259183, 0.9259182, 0.92591816)
+bones/1/rotation = Quaternion(0.4246264, 0.3150971, -0.25351247, 0.8100233)
+bones/4/rotation = Quaternion(0.26605675, -0.0042947456, -0.16926028, 0.9489713)
+bones/5/rotation = Quaternion(-0.06687569, 0.008843022, -0.04920118, 0.99650824)
+bones/6/rotation = Quaternion(0.47427514, 0.009297843, 0.27705306, 0.83559453)
+bones/7/rotation = Quaternion(0.60328865, -0.543575, 0.37133434, 0.45019975)
+bones/8/rotation = Quaternion(-0.018193638, 0.8152973, 0.30858994, 0.48962384)
+bones/9/rotation = Quaternion(-0.19290295, -0.121840484, 0.13653637, 0.9640028)
+bones/10/rotation = Quaternion(0.28876728, 0.06517672, 0.045089386, 0.9541135)
+bones/13/rotation = Quaternion(0.20016211, 0.117117435, 0.012715284, 0.97265464)
+bones/14/rotation = Quaternion(0.6557176, -0.29900867, -0.01928088, 0.6930054)
+bones/17/position = Vector3(-0.015025988, 0.12123364, -0.2916878)
+bones/17/rotation = Quaternion(-0.1492283, 0.7477063, 0.63493454, -0.1245971)
+bones/18/rotation = Quaternion(0.007960663, -0.1698265, 0.036086936, 0.98478085)
+bones/25/position = Vector3(0.0053690877, -0.03355284, 0.016253715)
+bones/25/rotation = Quaternion(-0.22364523, -0.8838052, -0.3801664, 0.15602832)
+bones/26/rotation = Quaternion(0.046002686, -0.035801977, -0.117957994, 0.9913061)
+bones/28/rotation = Quaternion(0.45334315, -0.09300836, 0.15424913, 0.8729471)
+
+[node name="g19-fps" parent="g19-fps" unique_id=1146567136 instance=ExtResource("8_qpj8t")]
+transform = Transform3D(-0.608292, 0, 0.00096862036, 0, 0.5862598, 0, -0.0013025912, 0, -0.45233226, 1.8109999, -3.8040009, -3.7319999)
+visible = false
+
+[node name="Skeleton3D" parent="g19-fps/g19-fps/ArmRig" parent_id_path=PackedInt32Array(1146567136, 1281634468) index="0" unique_id=101680258]
+bones/0/position = Vector3(-0.005627945, 0.11706495, -0.13451079)
+bones/0/rotation = Quaternion(0.28570285, 0.6121978, 0.7362782, -0.038498346)
+bones/0/scale = Vector3(0.9259183, 0.9259182, 0.92591816)
+bones/1/rotation = Quaternion(0.4246264, 0.3150971, -0.25351247, 0.8100233)
+bones/4/rotation = Quaternion(0.26605675, -0.0042947456, -0.16926028, 0.9489713)
+bones/5/rotation = Quaternion(-0.06687569, 0.008843022, -0.04920118, 0.99650824)
+bones/6/rotation = Quaternion(0.47427514, 0.009297843, 0.27705306, 0.83559453)
+bones/7/rotation = Quaternion(0.60328865, -0.543575, 0.37133434, 0.45019975)
+bones/8/rotation = Quaternion(-0.018193638, 0.8152973, 0.30858994, 0.48962384)
+bones/9/rotation = Quaternion(-0.19290295, -0.121840484, 0.13653637, 0.9640028)
+bones/10/rotation = Quaternion(0.28876728, 0.06517672, 0.045089386, 0.9541135)
+bones/13/rotation = Quaternion(0.20016211, 0.117117435, 0.012715284, 0.97265464)
+bones/14/rotation = Quaternion(0.6557176, -0.29900867, -0.01928088, 0.6930054)
+bones/17/position = Vector3(-0.015026003, 0.12123364, -0.2916878)
+bones/17/rotation = Quaternion(-0.1492283, 0.7477063, 0.63493454, -0.1245971)
+bones/18/rotation = Quaternion(0.007960663, -0.1698265, 0.036086936, 0.98478085)
+bones/25/position = Vector3(0.0053690877, -0.03355284, 0.016253715)
+bones/25/rotation = Quaternion(-0.22364523, -0.8838052, -0.3801664, 0.15602832)
+bones/26/rotation = Quaternion(0.046002686, -0.035801977, -0.117957994, 0.9913061)
+bones/28/rotation = Quaternion(0.45334315, -0.09300836, 0.15424913, 0.8729471)
+
+[node name="AnimationPlayer" parent="g19-fps/g19-fps" index="8" unique_id=896958324]
+autoplay = &"ArmRigAction"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="g19-fps/g19-fps" unique_id=1704450741]
+
+[node name="Muzzle Flash" type="Node" parent="." unique_id=2055590992]
+
+[node name="Muzzle" type="Marker3D" parent="Muzzle Flash" unique_id=443539999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.538162, 23.228748, -11.512602)
+
+[editable path="g19-fps"]
+[editable path="g19-fps/g19-fps"]

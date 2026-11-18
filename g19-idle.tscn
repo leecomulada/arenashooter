@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dptc20lv0g1sy"]
+
+[ext_resource type="PackedScene" uid="uid://upt5egqir6ou" path="res://levels/g19-fps.glb" id="1_2dc5a"]
+
+[node name="g19-fps" unique_id=356341866 instance=ExtResource("1_2dc5a")]
+transform = Transform3D(0.37337804, 0, 0, 0, 0.3839542, 0, 0, 0, 0.396943, 0, 0, -3.5184784)
+
+[node name="Skeleton3D" parent="ArmRig" parent_id_path=PackedInt32Array(1034036329) index="0" unique_id=1004142930]
+bones/0/position = Vector3(-0.005627945, 0.11706495, -0.13451079)
+bones/0/rotation = Quaternion(0.28570285, 0.6121978, 0.7362782, -0.038498346)
+bones/0/scale = Vector3(0.9259183, 0.9259182, 0.92591816)
+bones/1/rotation = Quaternion(0.4246264, 0.3150971, -0.25351247, 0.8100233)
+bones/4/rotation = Quaternion(0.26605675, -0.0042947456, -0.16926028, 0.9489713)
+bones/5/rotation = Quaternion(-0.06687569, 0.008843022, -0.04920118, 0.99650824)
+bones/6/rotation = Quaternion(0.47427514, 0.009297843, 0.27705306, 0.83559453)
+bones/7/rotation = Quaternion(0.60328865, -0.543575, 0.37133434, 0.45019975)
+bones/8/rotation = Quaternion(-0.018193638, 0.8152973, 0.30858994, 0.48962384)
+bones/9/rotation = Quaternion(-0.19290295, -0.121840484, 0.13653637, 0.9640028)
+bones/10/rotation = Quaternion(0.28876728, 0.06517672, 0.045089386, 0.9541135)
+bones/13/rotation = Quaternion(0.20016211, 0.117117435, 0.012715284, 0.97265464)
+bones/14/rotation = Quaternion(0.6557176, -0.29900867, -0.01928088, 0.6930054)
+bones/17/position = Vector3(-0.015025988, 0.12123364, -0.2916878)
+bones/17/rotation = Quaternion(-0.1492283, 0.7477063, 0.63493454, -0.1245971)
+bones/18/rotation = Quaternion(0.007960663, -0.1698265, 0.036086936, 0.98478085)
+bones/25/position = Vector3(0.0053690877, -0.03355284, 0.016253715)
+bones/25/rotation = Quaternion(-0.22364523, -0.8838052, -0.3801664, 0.15602832)
+bones/26/rotation = Quaternion(0.046002686, -0.035801977, -0.117957994, 0.9913061)
+bones/28/rotation = Quaternion(0.45334315, -0.09300836, 0.15424913, 0.8729471)
+
+[node name="AnimationPlayer" parent="." index="6" unique_id=1997610834]
+autoplay = &"Idle"
